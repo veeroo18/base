@@ -1,0 +1,290 @@
+// VARIABLES 
+$grid-gutter-width: 40px !default;
+$container-max-widths: (
+  sm: 420px,
+  md: 720px,
+  lg: 960px,
+  xl: 1280px
+);
+@import "starter";
+// blues
+$liteblue:#DAEDFF; 
+$skyblue:#3371F2;
+$royalblue : #6d00ad;
+$navyblue : #023E8A;
+$deepblue: #03045E;
+// greys
+$papergrey:#F8F8F8;
+$ashgrey:#B9B9C3;
+$litegrey:rgb(119, 119, 119);
+$slategrey:#455A64;
+$charcoal:#2D3748;
+$black : #000000;
+
+$grdliteblue: linear-gradient(180deg, $liteblue 53%, #F2F8FF 119.34%);
+$grdheader: linear-gradient(268.09deg, $deepblue 20.97%, $skyblue 97.19%);
+$bodyfont: 'Montserrat', arial, sans-serif;
+$navfont: 'Montserrat', arial, sans-serif;
+$headerfont : 'Metropolis',arial, sans-serif;
+$subheaderfont: 'Metropolis',arial, sans-serif;
+
+
+// ara card system
+.rowShort { max-width: 420px; margin: 0 auto;}
+.card { box-shadow: #0006 3px 3px 15px;
+    .avatar { border-radius: 50%; overflow: hidden;}
+}
+//
+
+// custom css for cognoscente design
+body { background: #fff; padding: 0; font-family: $bodyfont; font-size: .875rem; line-height: 1.4rem; font-weight: 400; color: $slategrey; transition: all 400ms ease-in-out;}
+button {font-family: $subheaderfont!important; color:#fff;  border:$royalblue solid 1px;}
+label {text-transform: uppercase!important; color:#222!important;}
+.gradient-letters,
+h1, h2 { background: $grdheader; background-clip: text; -webkit-background-clip: text; font-family: $headerfont, arial, sans-serif; font-weight: 700; -webkit-text-fill-color: transparent; letter-spacing: -2px; line-height: 2.5rem;}
+h3, h4, h5 { font-family: $subheaderfont, arial, sans-serif; font-weight: 700; color: $slategrey;}
+h5, h6 { font-weight: 600; letter-spacing: -1px;}
+
+
+.show#main-navbar { background-color: $deepblue;}
+.navbar-custom { background-color:$navyblue; height: 95px; padding: 10px 0;
+    .nav-item { padding:0 8px;
+        a {font-family: $navfont; font-weight: 400; color:$liteblue; font-size: 16px;}
+        .active { color:white; font-weight: 600;}
+    }
+    a, i { color:white;}
+    button.btn {background: transparent; color: white; border:none;}
+    input.hidden {visibility: hidden; width: 0; margin: 0;padding: 0; border:none; transition: all 200ms ease-in-out;}
+    .dropdown-menu a {color:#333;}
+    .active {font-weight: bold;}
+    form input:focus,
+    form:hover input.hidden { visibility: visible; width: 100px; padding:4px; background:transparent; 
+        border-bottom: white solid 1px; color:white;}
+}
+
+.breadcrumbs { margin: 0;padding: 5px 0;
+    a{ font-size: 12px; margin: 0; }
+}
+
+main{ margin-top:140px;
+    section { padding: 45px 0 0 0;}
+    &#home {
+        .home-head-bg {background-image: url('../img/home-head-bg.png'); background-repeat: no-repeat; background-size: cover; background-position: bottom center; min-height: 625px;}
+        .home-search {
+            input, button {margin: 0; border-radius: 0;}
+            input { border-radius: 5px 0 0 5px; flex: 1;}
+            button { border-radius: 0 5px 5px 0; border:$royalblue solid 1px;}
+        }
+        .client-logo { padding:30px 0; max-width: 160px;}
+        .postentry .posttitle a { font-size: 24px; color:#000;}
+        .postentry .postcontent { font-size: 16px; line-height: 228%;}
+        .postentry span { font-weight: bold; font-size: 14px;}
+        .nav-tabs .nav-link {
+            padding-left: 55px;
+            i.bi {display:none;}
+            &.active {
+                padding-left: 20px;
+                i.bi { display: inline-block;}
+            }
+        }
+    }
+    &#bloggrid {
+        .blogbg {background-image: url('../img/blogblob.svg'); background-repeat: no-repeat; background-size: cover;background-position: -107px -265px;}
+        a.tag { margin:10px 0; padding: 4px 10px; background-color: #e7d4ee!important; display: inline-block; text-transform: capitalize; font-weight: 400; font-size: 12px;}
+        .bloggriditem h6.lead a {color:$charcoal;}
+        .nav-pills.tags a.nav-item {
+            @extend .card; @extend .card-shadow; @extend .card-nb; display: inline-block!important; border-radius: 45px!important; width: auto!important; padding: 10px 15px !important;
+            margin: 10px !important;
+        }
+    }
+    //single post and posts only wrapped under articles
+    article { 
+        .posttitle a { color:$slategrey;}
+        img {width:100%;}
+    }
+    &#services {
+        .row-service { padding: 2em 0; align-items: center; }
+    }
+    &#contact {
+        img {width: 100%;}
+        nav .bi { font-size: 30px;}
+        i span {font-style: normal;}
+        
+    }
+
+    input, textarea, select, option, button { border: 1px solid #8692A6;  border-radius: 5px; padding:10px 15px; font-size: 14px; margin: 5px 0;}
+    button, a.btn-blue { box-shadow:0px 4px 15px $skyblue!important; background: $skyblue!important; 
+        padding:5px 15px!important;}
+        .btn:hover { color:$liteblue!important;}
+    .req-sample-form {
+        label {font-weight: 500; color:#263238; text-transform: capitalize!important;}
+        textarea, input, select, option { padding:10px 45px; min-height: 50px; font-size:12px ;border: 1px solid #8692A6; }
+        input {padding:25px 45px; }
+    }
+    .career-form {
+        label {font-weight: 500; color:#263238; text-transform: capitalize!important;}
+        textarea, input, select, option { padding:10px 45px; min-height: 50px; font-size:12px ;}
+        input {border: 1px solid #ced4da; padding:25px 45px; }
+        input[type="file"] {
+            width: 100%; padding:18px 20px;
+        }
+    }
+    .form-control::placeholder {font-size: 14px; color:#333;}
+    .audiobtn {font-family: $headerfont; font-weight: 600; }
+
+    .tab-content { position: relative; background-color: #fff;
+        img { width:100%;}
+    }
+    .nav-tabs .nav-link { color: #333; padding:.5rem .7rem;}
+    .nav-tabs .nav-link.active { background-color: #fff;  border-color: $deepblue #dee2e6 #fff; 
+        border-width: 4px 1px; color:$skyblue; font-weight: bold;    margin-top: -6px;}
+
+    .ver-tabs {
+        .nav-tabs .nav-link { border-width: 1px 0;  border-radius: 0; padding:15px; min-width:300px; margin-top: 0;
+            &.active {border-color: $skyblue; background-color: $liteblue; border:none;}
+        }
+        .tab-pane { padding:20px; height: 100%; background: $liteblue; }
+    }
+    
+}
+
+.grid .card {border-radius: 0;}
+.card {border: 1px solid #90CAF9; background: #FFFFFF; border-radius: 10px; padding:20px 15px; display: inherit; width: 100%; margin:10px 0;}
+.card-shadow {box-shadow: 0px 0px 15px 0px #00000026;}
+.card-nb { border: none!important;}
+.card-yellow {background: #FFA500; border: 1px solid #BCD1FF; }
+.card-blue {background: $liteblue url('../img/blob.svg') no-repeat; background-size: auto;}
+.card-blog {border-radius: 10px; margin-bottom: 20px;}
+.card.widget h5 { color:$slategrey;}
+.card.widget nav a { padding:10px; border-radius: 10px; font-size: 12px; color:$deepblue;
+    &.active {background:$liteblue; color: $slategrey;}
+}
+.card.blog-entry { border:none; display: flex; flex-direction: row; padding: 0; overflow: hidden;}
+.card-searchresult { 
+    .postentry .posttitle { font-size: 16px!important; text-transform: uppercase;}
+    span {font-weight: bold;}
+}
+.industry-blogs .blog-entry:first-child .blog-date {background: $liteblue; color:$deepblue;}
+.blog-entry {
+    .blog-date { min-width: 125px; background-color: #ccc; padding:20px; font-size: 20px; text-align: center; display: flex;
+        align-items: center;
+    }
+    .blog-title {padding:20px;}
+    .blog-meta { display: flex; flex-direction: row; justify-content: space-between; font-size: 12px; margin:-10px 0 10px 0;}
+}
+
+// common classes
+.intro,
+.lead { color:$slategrey; font-weight: 700; font-family:$subheaderfont;}
+.litegrey {color: $litegrey!important;}
+.slategrey { 
+    li { margin-bottom: 8px;}
+    a { color: $slategrey !important; font-size: 13px;
+        &.active {background-color:transparent; font-weight: normal; color: $royalblue!important;}
+    }
+}
+.tag { background: rgba(139, 196, 252, 0.25); border-radius: 10px; text-transform: uppercase; color:#263238; padding:.5em; font-weight: bold; font-family: $headerfont;}
+.tagheader { color:$royalblue; text-transform: uppercase; font-size: 12px;}
+.btn-blue { background: $royalblue; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); color:white; border-radius: 5px; border:$deepblue solid 1px; font-family: $subheaderfont;}
+.card-slider { overflow-y: auto; max-width: 100%;
+    .card { margin: 10px; font-size: 29px; min-width:100px; min-height: 200px;}
+    .owl-nav ,
+    button.owl-dot { background: none!important; box-shadow: none!important;}
+}
+.nb-list { padding: 0; margin: 0; list-style-type: none;}
+//.tab-content aside .widget,
+.sticky-sidebar { position: sticky; -webkit-position:sticky; top:150px;} 
+.tab-content {
+    aside {
+        .sticky-sidebar { top:140px;}
+        .highlite { border:red solid 1px;}
+    }
+    article { padding:10px;}
+}
+.sticky-tabbar {top: 139px; z-index: 300; background: white; position: sticky; -webkit-position:sticky;}
+.row-panel { padding:80px 0;}
+.panel-lite { background-color: $liteblue;}
+.panel-grey { background-color: $papergrey!important;}
+.text-center { text-align: center!important;}
+
+.dotted-bg { background-image: url(../img/bg-dotted.png); background-repeat: repeat-x;}
+aside {
+    .nav-item:hover,
+    .active {background-color: $liteblue; border-radius: 10px; font-weight: bold;}
+}
+
+// droptab
+.droptabs {transition: all 200ms ease;}
+.droptab-arrow {background-color: white!important; box-shadow: none;
+    i.bi { transform: rotate(0deg); font-weight: 400; display: block;}
+}
+.card-header:hover,
+.expanded-tab .card-header { background-color: $liteblue;}
+.droptab-arrow.btn.collapsed {
+    i.bi.bi-chevron-up {transform: rotate(180deg);}
+}
+
+// category view page
+.category-view-sidebar {
+    background-color: $ashgrey;
+    .card{ box-shadow: none!important;
+        .card-body { padding: 5px!important;
+            a { font-size: 12px;
+                &:hover { font-weight: normal; background-color:none!important; }
+            }
+        }
+    }
+    .bi { color: $skyblue !important;}
+    button.btn {background: transparent!important; color: $charcoal; font-weight: bold; border: none !important;;box-shadow: none!important; border:none;}
+    input.hidden {visibility: hidden; width: 0; margin: 0;padding: 0; border:none; transition: all 200ms ease-in-out;}
+    form input:focus,
+    form:hover input.hidden { visibility: visible; width: 100px; padding:4px; background:transparent; 
+        border-bottom: white solid 1px; color:white;}
+
+}
+
+//testimonials classes
+.theader {
+    img {margin-right: 10px;}
+    h5 { font-size: 15px; font-weight: 500; letter-spacing: 0; color:$charcoal;}
+    h5,p {margin-bottom: 0;}
+    p { font-size: 12px; color: $ashgrey;}
+    margin-bottom: 10px;}
+.tcontent {
+    padding-right:40px;
+    color:$charcoal;
+    p {margin-bottom: 5px;  color:$charcoal;}
+    h6 {line-height: 24px; letter-spacing: -.3px;}
+}
+
+// spacing classes
+.sp1 { height: 10px; width: 100%;}
+.sp2 { height: 20px; width: 100%;}
+.sp3 { height: 30px; width: 100%;}
+.sp4 { height: 40px; width: 100%;}
+.sp5 { height: 50px; width: 100%;}
+.sp8 { height: 80px; width: 100%;}
+.sp10 { height: 100px; width: 100%;}
+
+// background position classes
+.pos-lt { background-position: left top;}
+.pos-rt { background-position: right top;}
+.pos-lb { background-position: left bottom;}
+.pos-rb { background-position: right bottom;}
+.pos-cc { background-position: center;}
+.pos-ct {background-position: center top;}
+.pos-cb {background-position: center bottom;}
+.pos-cl {background-position: center left;}
+.pos-cr {background-position: center right;}
+
+.card-rt {background-position: -250% 250%;}
+.card-lt {background-position: 400% 120%;}
+.card-rb {background-position: -150% -50%;}
+.card-lb {background-position: -475% -100%;}
+
+footer { padding:50px 50px 10px 50px; background:$black; color:white; margin-top:50px;
+    a { color:white; font-weight: 500; margin:5px 0;
+        &:hover { color:white; text-decoration: none;}
+    }
+    i span {font-style: normal;}
+}

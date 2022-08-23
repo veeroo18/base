@@ -1,0 +1,26 @@
+{
+  "name": "bootstrap-website",
+  "version": "1.0.0",
+  "description": "bootstrap pug scss js gulp mix for static websites",
+  "main": "index.html",
+  "scripts": {
+    "test": "gulp build"
+  },
+  "author": "veerendra tikhe",
+  "license": "ISC",
+  "devDependencies": {
+    "exact": "^0.8.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-webp": "^4.0.1",
+    "node-sass": "^7.0.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "browser-sync": "^2.27.10",
+    "gulp-pug": "^5.0.0"
+  }
+}
