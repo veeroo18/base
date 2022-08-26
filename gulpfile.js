@@ -34,7 +34,7 @@ function compilescss(){
 
 //pug
 function compilepug(){
-  return src('src/pug/**/*.pug')
+  return src('src/pug/*.pug')
   .pipe(pug())
   .pipe(dest('dist/'))
 }
@@ -57,9 +57,9 @@ function imgbuild(){
 
 // images - webp
 function webpimg(){
-  return src('dist/images/*.{jpg,png}')
+  return src('dist/images/*.{jpg,png,webp}')
   .pipe(imagewebp())
-  .pipe(dest('dist/images'))
+  .pipe(dest('dist/images/webp'))
 }
 
 
@@ -69,7 +69,7 @@ function watchtask(){
   watch('src/scss/*.scss', compilescss);
   watch('src/pug/**/*.pug', compilepug);
   watch('src/js/*.js', jsbuild);
-  watch('src/images/*.{jpg,png}', imgbuild);
+  watch('src/images/*.{jpg,png,webp}', imgbuild);
   watch('dist/images/*.{jpg,png}', webpimg);
 }
 
