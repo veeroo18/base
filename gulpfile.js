@@ -47,30 +47,53 @@ function jsbuild() {
 
 //images
 function imgbuild(){
-  return src('src/images/*.{jpg,jpeg,png}')
+  return src('src/images/*.{png,jpg,gif,jpeg}')
   .pipe(imagemin([
     imagemin.mozjpeg({quality:80, progressive:true}),
     imagemin.optipng({optimizationLevel:2}),
   ]))
+  .pipe(imagewebp())
   .pipe(dest('dist/images'))
 }
 
-// images - webp
-function webpimg(){
-  return src('dist/images/*.{jpg,png,webp}')
+//asset images
+function assetsbuild(){
+  return src('src/assets/*.{png,jpg,jpeg}')
+  .pipe(imagemin([
+    imagemin.mozjpeg({quality:80, progressive:true}),
+    imagemin.optipng({optimizationLevel:2}),
+  ]))
   .pipe(imagewebp())
-  .pipe(dest('dist/images/webp'))
+  .pipe(dest('dist/assets/'))
+}
+
+//asset images
+function svgbuild(){
+  return src('src/assets/*.svg')
+  .pipe(dest('dist/assets/'))
+}
+
+//asset images
+function mtagbuild(){
+  return src('src/mtag/*.png')
+  .pipe(imagemin([
+    imagemin.optipng({optimizationLevel:2}),
+  ]))
+  .pipe(dest('dist/mtag/'))
 }
 
 
 //create watch task
 
 function watchtask(){
+  watch('dist/*.html', browsersyncReload);
+  watch(['src/**/*.scss', 'src/**/*.js'], series(compilescss, compilepug, jsbuild, browsersyncReload));
   watch('src/scss/*.scss', compilescss);
   watch('src/pug/**/*.pug', compilepug);
   watch('src/js/*.js', jsbuild);
-  watch('src/images/*.{jpg,png,webp}', imgbuild);
-  watch('dist/images/*.{jpg,png}', webpimg);
+  watch('src/assets/*.{jpg,png,jpeg,webp}', assetsbuild);
+  watch('src/assets/*.svg', svgbuild);
+  watch('src/images/*.{jpg,png,jpeg,webp}', imgbuild);
 }
 
 
@@ -79,8 +102,10 @@ exports.default = series(
   compilescss,
   compilepug,
   jsbuild,
+  assetsbuild,
+  mtagbuild,
   imgbuild,
-  webpimg,
+  svgbuild,
   browsersyncServe,
   browsersyncReload,
   watchtask
